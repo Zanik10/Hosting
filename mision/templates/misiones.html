@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="contenedor-mision contenedor-categorias">
+    <table class="table table-light tabla izquierda">
+        <thead>
+            <tr>
+                <th>Misión</th>
+                <th>Puntos</th>
+                <th>Realizar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in listar_misiones %}
+                <tr>
+                    <td>{{ s.nombre_mision }}</td>
+                    <td>{{ s.descr }}</td>
+                    <td>
+                        <a href="{% url 'sumar_puntos' s.id %}" class="btn btn-success" role="button">Reciclar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="card text-bg-light border-success mb-3 derecha">
+        <div class="card-header"><h3>Confiamos en usted</h3></div>
+        <div class="card-body">
+          <p class="card-text">
+            <h3>Confiamos totalmente en que la persona ponga con total honestidad y responsabilidad las tareas que de verdad ha hecho, llamamos a la honestidad a todos</h3>
+          </p>
+        </div>
+      </div>
+</div>
+
+
+{% endblock %}
